@@ -1,3 +1,4 @@
+<br><br>
 <mat-card class="example-card">
   <mat-card-header><br><br>
         <mat-card-subtitle><h2>Login </h2></mat-card-subtitle><br><br>
@@ -9,8 +10,8 @@
     </mat-form-field><br>
     <mat-form-field>
       <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
-      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </mat-form-field><br>
-      <button mat-raised-button color="primary" (click)="login()">Login</button>
+      <button mat-raised-button color="primary" [disabled]="email.invalid" (click)="login()">Login</button>
   </form><br><br><br>
 </mat-card>

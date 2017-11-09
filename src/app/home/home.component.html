@@ -1,48 +1,20 @@
-
-<mat-card class="example-card">
-  <mat-card-content>
-    <p>
-      Home Component
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>retry</button>
-    <button mat-button>back</button>
-  </mat-card-actions>
-</mat-card>
+<card-view class="mdl-grid" [cards]="cards" (removeCard)="removeCard($event)"></card-view>
 
 <div class="mdl-grid">
-  <mat-card class="mdl-cell graybox mdl-cell--4-col example-card">
+  <mat-card class="mdl-cell graybox mdl-cell--3-col">
+    <mat-card-header>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
     <mat-card-content>
       <p>
-        Home Component
+        Shiba Inu Desc.
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>retry</button>
-      <button mat-button>back</button>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
     </mat-card-actions>
   </mat-card>
-  <mat-card class="mdl-cell graybox mdl-cell--4-col example-card">
-    <mat-card-content>
-      <p>
-        Home Component
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>retry</button>
-      <button mat-button>back</button>
-    </mat-card-actions>
-  </mat-card>
-  <mat-card class="mdl-cell graybox mdl-cell--4-col example-card">
-    <mat-card-content>
-      <p>
-        Home Component
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>retry</button>
-      <button mat-button>back</button>
-    </mat-card-actions>
-  </mat-card>
-</div>    
+</div>

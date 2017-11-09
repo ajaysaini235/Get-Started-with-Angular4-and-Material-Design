@@ -8,6 +8,7 @@ import { MaterialDesignModule } from '../material-design/material-design.module'
 
 // Services
 import {UserAuthService} from './services/user-auth.service'
+import { EventService } from '../services/event.service';
 
 // Components
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -30,7 +31,7 @@ const routes:Route[] =[
   ],
   exports:[MaterialDesignModule],
   declarations: [PageNotFoundComponent,LoginComponent],
-  providers: [UserAuthService],
+  providers: [UserAuthService,EventService],
   
 })
 export class TestCommonModule { }

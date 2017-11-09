@@ -11,7 +11,7 @@ import {
   MatCardModule,
   MatFormFieldModule,
   MatInputModule, MatSelectModule,
-  MatMenuModule
+  MatMenuModule,
 } from '@angular/material';
 
 @NgModule({

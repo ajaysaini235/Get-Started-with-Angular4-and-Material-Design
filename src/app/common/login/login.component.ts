@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserAuthService } from '../services/user-auth.service'
 import { FormControl, Validators } from '@angular/forms';
 import {Router} from '@angular/router'
+import { EventService } from '../../services/event.service';
+
 
 @Component({
   selector: 'app-login',
@@ -11,15 +13,12 @@ import {Router} from '@angular/router'
 
 export class LoginComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
-
-  constructor(private userAuthService: UserAuthService,private router:Router) { }
+  hide:boolean=true
+  constructor(private userAuthService: UserAuthService,
+    private router:Router,private eventService:EventService) { }
 
   ngOnInit() {
-    this.userAuthService.isLogin().then((data) => {
-      if(data){
-        this.router.navigate(['home'],{replaceUrl:true});          
-      }
-    })
+    
   }
 
   getErrorMessage() {
@@ -31,7 +30,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.userAuthService.login("https://api.myjson.com/bins/f2xqf").subscribe((data) => {
         if(data){
-          this.router.navigate(['home'],{replaceUrl:true});          
+          this.eventService.broadcast('login',data);       
         }
     })
   }

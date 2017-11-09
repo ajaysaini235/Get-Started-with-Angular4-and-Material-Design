@@ -38,7 +38,7 @@ export class UserAuthService {
     })
   }
 
-  isLogout(){
+  logout(){
     localStorage.clear();
   }
 

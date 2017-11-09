@@ -2,11 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule,Route } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
+// Modules
 import { MaterialDesignModule } from './material-design/material-design.module';
+
+// Components
+import { HomeComponent } from './home/home.component';
+import { CardViewComponent } from './components/card-view/card-view.component';
 
 // Guards
 import { UserAuthGuard } from './guards/user-auth.guard'
+
+//  Service 
+import { EventService } from './services/event.service';
 
 const routes:Route[] =[
   { path:'',redirectTo:"home",pathMatch:"full"},
@@ -23,8 +30,8 @@ const routes:Route[] =[
     RouterModule
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,CardViewComponent
   ],
-  providers: [UserAuthGuard]
+  providers: [UserAuthGuard,EventService]
 })
 export class AppRoutingModule { }

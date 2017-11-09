@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {UserAuthService} from './common/services/user-auth.service'
-import {ActivatedRoute} from '@angular/router'
-
+import {Router} from '@angular/router'
+import {EventService} from './services/event.service'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,15 +10,28 @@ import {ActivatedRoute} from '@angular/router'
 
 export class AppComponent {
   headerHide:boolean=true
-  constructor(private userAuthService:UserAuthService,private activatedRoute:ActivatedRoute){
+  constructor(private userAuthService:UserAuthService,private router:Router,private eventService:EventService){
+    eventService.subscribe("login",() => {
+      this.headerHide=false;
+      this.router.navigate(['home'],{replaceUrl:true});   
+    });
+    eventService.subscribe("logout",() => {
+      this.headerHide=true;
+      localStorage.clear();
+      this.router.navigate(['login'],{replaceUrl:true});   
+    });
   }
 
   ngOnInit(){
     this.userAuthService.isLogin().then((data) => {
-      this.headerHide=false;
+      this.eventService.broadcast("login"); 
     }).catch((error) => {
-      this.headerHide=true;
+      this.eventService.broadcast("logout"); 
     });
+  }
+
+  logout(){
+       this.eventService.broadcast("logout");      
   }
 
 }
