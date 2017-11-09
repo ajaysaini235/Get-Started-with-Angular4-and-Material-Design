@@ -1,0 +1,13 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .example-card {
+    width: 50%;
+    margin: auto;    
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
