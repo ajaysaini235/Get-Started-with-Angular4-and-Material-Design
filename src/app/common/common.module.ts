@@ -13,10 +13,11 @@ import { EventService } from '../services/event.service';
 // Components
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
-
+import { AppHeaderComponent } from './app-header/app-header.component'
 
 // Guards
-import { UserAuthGuard } from '../guards/user-auth.guard'
+import { UserAuthGuard } from '../guards/user-auth.guard';
+import { ConfirmDirective } from './directives/confirm.directive';
 
 const routes:Route[] =[
   { path:"login", component:LoginComponent},
@@ -29,8 +30,8 @@ const routes:Route[] =[
     MaterialDesignModule,FormsModule,ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  exports:[MaterialDesignModule],
-  declarations: [PageNotFoundComponent,LoginComponent],
+  exports:[MaterialDesignModule,AppHeaderComponent],
+  declarations: [PageNotFoundComponent,LoginComponent, AppHeaderComponent, ConfirmDirective],
   providers: [UserAuthService,EventService],
   
 })

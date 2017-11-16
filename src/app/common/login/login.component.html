@@ -12,6 +12,6 @@
       <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
       <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </mat-form-field><br>
-      <button mat-raised-button color="primary" [disabled]="email.invalid" (click)="login()">Login</button>
+      <button mat-raised-button (click)="login()" confirmMessage="Are you sure"  color="primary" [disabled]="email.invalid" >Login</button>
   </form><br><br><br>
 </mat-card>

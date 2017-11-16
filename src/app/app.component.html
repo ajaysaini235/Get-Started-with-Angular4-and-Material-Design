@@ -1,14 +1,34 @@
-<mat-toolbar color="primary" *ngIf="!headerHide">
-  <span>Angular4 with Material Design</span>
-  <span class="example-spacer"></span>
-  <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="logout()">
-      <mat-icon>lock</mat-icon>
-      <span>Logout</span>
-    </button>
-  </mat-menu>
-</mat-toolbar>
-<router-outlet></router-outlet>
+<app-header (toggleMenu)="toggleMenu()" *ngIf="!headerHide"></app-header>
+
+<mat-sidenav-container [ngClass]="{'marginZeroTop':headerHide}">
+  <mat-sidenav *ngIf="!headerHide" mode="side" opened=true [style.width.px]="matsidenav_width.current">
+    <mat-list>
+        <div *ngFor="let group of groups">
+          <h3 mat-subheader *ngIf="group.title">{{group.title}}</h3>
+          <div *ngIf="matsidenav_width.current == matsidenav_width.full">
+            <mat-list-item *ngFor="let item of group.items" [routerLink]="item.path" routerLinkActive="active-path">
+              <mat-icon mat-list-icon *ngIf="item.icon">{{item.icon}}</mat-icon>
+              <h4 mat-line>{{item.title}}</h4>
+            </mat-list-item>
+          </div>
+          <div *ngIf="matsidenav_width.current == matsidenav_width.small">
+            <mat-list-item *ngFor="let item of group.items" [routerLink]="item.path" routerLinkActive="active-path" [matTooltip]="item.title" matTooltipPosition="right">
+                <mat-icon mat-list-icon *ngIf="item.icon">{{item.icon}}</mat-icon>
+            </mat-list-item>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <!-- <div class="footer">
+          <mat-divider></mat-divider>
+          <mat-list-item (click)="toggleSmallMenu()">
+            <mat-icon mat-list-icon>
+              {{matsidenav_width.current == matsidenav_width.full ? 'keyboard_arrow_left' : 'keyboard_arrow_right'}}</mat-icon>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </div> -->
+    </mat-list>
+  </mat-sidenav>
+  <div class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

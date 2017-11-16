@@ -11,7 +11,9 @@ interface User{
 @Injectable()
 export class UserAuthService {
   currentUser:User
-  constructor(private http:Http) { }
+  constructor(private http:Http) { 
+    alert("UserAuthService");
+  }
 
   login(userObj:string):Observable<any>{
     return this.http.get(userObj).map((res) => {

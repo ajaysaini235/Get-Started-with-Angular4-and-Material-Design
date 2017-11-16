@@ -1,7 +1,54 @@
-.example-icon {
-    padding: 0 14px;
-  }
-  
-  .example-spacer {
-    flex: 1 1 auto;
-  }
+.marginZeroTop{
+ top:0 !important;
+}
+
+/* Start Side Menu  CSS */
+
+.mat-sidenav-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  bottom: 0;
+}
+
+/* End Side Menu  CSS */
+
+
+
+/* Start Side Menu  CSS */
+
+
+mat-sidenav .mat-list .mat-subheader:first-child,
+mat-sidenav .mat-nav-list .mat-subheader:first-child {
+  margin-top: -10px;
+}
+
+mat-sidenav .mat-list .mat-subheader,
+mat-sidenav .mat-nav-list .mat-subheader {
+  height: 40px;
+  padding: 8px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+mat-sidenav .mat-list .mat-list-item,
+mat-sidenav .mat-nav-list .mat-list-item {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+mat-sidenav .footer{
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background: white;
+}
+
+mat-sidenav .footer mat-icon{
+  float: right;
+  font-size: 30px;
+}
+
+
+/*  End Side Menu  CSS */

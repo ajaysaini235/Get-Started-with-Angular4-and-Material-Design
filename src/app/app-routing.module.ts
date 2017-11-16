@@ -17,7 +17,11 @@ import { EventService } from './services/event.service';
 
 const routes:Route[] =[
   { path:'',redirectTo:"home",pathMatch:"full"},
-  { path:'home',component:HomeComponent,canActivate:[UserAuthGuard]}
+  { path:'home',component:HomeComponent,canActivate:[UserAuthGuard]},
+  {
+    path: 'dynamiclink',
+    loadChildren: './dynamiclink/dynamiclink.module#DynamiclinkModule'
+  }
 ]
 
 @NgModule({

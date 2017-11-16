@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <button class="app-icon-button app-menu-btn" (click)="toggleSideMenu()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+  </button>
+  <span class="app-title">Angular4 with Material Design</span>
+  <span class="mat-spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item appConfirm (onConfirm)="logout($event)">
+      <mat-icon>lock</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

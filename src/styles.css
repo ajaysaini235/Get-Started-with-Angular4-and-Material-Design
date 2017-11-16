@@ -1,2 +1,165 @@
-/* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* @import '~@angular/material/prebuilt-themes/purple-green.css'; */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* @import '~@angular/material/prebuilt-themes/indigo-pink.css'; */
+/*@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';*/
+
+body{
+   margin: 0;
+}
+
+[color='secondary']{
+	background: rgba(63, 81, 181, 0.92);
+  color: #fff;
+  font-size: small !important;
+  letter-spacing: 1px;
+  font-weight: 400 !important;
+}
+
+.banner{
+  margin: -5px !important;
+  margin-bottom: 10px !important;
+}
+
+.mat-toolbar{
+  min-height:50px !important;
+}
+
+.mat-toolbar-row{
+  height:50px !important;
+}
+
+.app-content-padding {
+  padding:20px;
+}
+
+.app-content mat-card {
+    margin: 5px;
+}
+
+.app-sidenav {
+  padding: 10px;
+  min-width: 100px;
+}
+
+.app-content mat-checkbox {
+  margin: 10px;
+}
+
+.app-toolbar-filler {
+  flex: 1 1 auto;
+}
+
+.app-toolbar-menu {
+  padding: 0 14px 0 14px;
+  color: white;
+}
+
+.app-action {
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.app-spinner {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}
+
+.app-input-icon {
+  font-size: 16px;
+}
+
+.app-list {
+  border: 1px solid rgba(0,0,0,0.12);
+  width: 350px;
+  margin: 20px;
+}
+
+.app-progress {
+  margin: 20px;
+}
+
+
+.mat-list .mat-list-item .mat-line{
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+
+option:hover:not(.mat-option-disabled),mat-list-item:hover{
+    background: rgba(0, 0, 0, 0.09);
+}
+
+/* Start Side Menu  CSS */
+
+.active-path, .active-path .mat-line{
+  color: #4e5fbb !important;
+}
+
+mat-sidenav .mat-list .mat-list-item .mat-list-icon{
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    padding: 4px;
+}
+
+mat-sidenav .mat-list .mat-list-item{
+  outline: none;
+}
+
+mat-sidenav .mat-list .mat-list-item .mat-list-item-content{
+  font-size: 14px !important;
+  height: 38px !important;
+}
+
+mat-sidenav .footer .mat-list-item-content{
+  display: block !important;
+}
+
+
+/* End Side Menu  CSS */
+
+
+.mat-select-arrow,.mat-select-value, .mat-select-disabled .mat-select-value, .mat-select-trigger {
+    color: rgba(250, 250, 250, 0.59);
+    font-size: 15px;
+}
+
+/*
+   Tabs CSS
+*/
+
+
+app-authentication .mat-ink-bar {
+    background-color: #fff;
+    height: 3px;
+}
+
+app-authentication .mat-tab-header{
+    background: #4e5fbb;
+}
+
+app-authentication .mat-tab-label{
+    color:#fff;
+}
+app-authentication .mat-tab-header{
+  border-bottom: none !important;
+}
+
+
+/*  content box */
+
+.mat-sidenav-container {
+    background-color: rgb(236, 239, 241);
+}
+
+.mat-tab-body-content{
+  padding:10px;
+}
+
+.mat-margin-auto{
+  margin: auto;
+  width:90%;
+}
